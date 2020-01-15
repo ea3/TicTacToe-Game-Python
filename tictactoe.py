@@ -76,6 +76,12 @@ def player_choice(board):
 	return position
 
 
+def replay():
+
+	input("Play again? Enter Yes or No")
+
+	return choice == 'Yes'
+
 
 
 
