@@ -1,4 +1,5 @@
 import random 
+
 def display_board(board):
 
 	print('\n'*100)
@@ -76,11 +77,57 @@ def player_choice(board):
 	return position
 
 
+
 def replay():
 
 	input("Play again? Enter Yes or No")
 
 	return choice == 'Yes'
+
+
+while True:
+    print('Welcome to Tic Tac Toe!')
+    
+    the_Board = [' '] * 10   # a list of empty spaces
+    player1_marker, player2_marker = player_input()
+
+    turn = choose_first()
+    print (turn + ' will go first')
+
+    play_game = input('Ready to play?  y or n? ')
+
+    if play_game =='y':
+    	game_on = True
+    else:
+    	game_on = False
+
+# game play
+
+    while game_on:
+        if turn == 'Player 1':
+        	
+
+        if win_check(theBoard, player):
+            display_board(available,theBoard)
+            print('Congratulations! Player '+player+' wins!')
+            game_on = False
+        else:
+            if full_board_check(theBoard):
+                display_board(available,theBoard)
+                print('The game is a draw!')
+                break
+            else:
+                toggle *= -1
+                player = players[toggle]
+                clear_output()
+
+    # reset the board and available moves list
+    theBoard = [' '] * 10
+    available = [str(num) for num in range(0,10)]
+    
+    if not replay():
+        break
+
 
 
 
